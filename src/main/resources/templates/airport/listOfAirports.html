@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>List of Airports Available</title>
+</head>
+<body>
+ <div align="center">
+            <h1> International Airports </h1>
+            <div>
+                <a th:href="@{/new}">Add a New Airport</a>
+            </div>
+            <table border="1">
+            <thead>
+            <tr>
+                <th>Airport Code</th>
+                <th>Airport Name</th>
+                <th>City</th>
+                <th>Country</th>
+                <th>Action</th>
+            </tr>
+            </thead>
+        <tbody>
+
+        <tr th:each="airports:${airports}">
+        
+        
+        <td th:text="${airports.airportCode}"></td>
+        <td th:text="${airports.airportName}"></td>
+        <td th:text="${airports.city}"></td>
+        <td th:text="${airports.country}"></td>
+        <td>
+           <a th:href="@{'/edit/' + ${airports.airportId}}">Update</a>
+        </td>
+        &nbsp;&nbsp;&nbsp;
+            <td>
+             <a th:href="@{'/delete/' + ${airports.airportId}}">Delete </a>
+              
+            </td>
+
+            </tr>
+        </tbody>
+       </table>
+      </div>
+
+</body>
+</html>
+

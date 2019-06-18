@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Airport to be Updated</title>
+</head>
+
+<body>
+
+	<div class="container">
+	
+		<h3>Airport Directory</h3>
+		<hr>
+		
+		<p class="h4 mb-4">Save Airport</p>
+	
+		<form action="#" th:action="@{/save}"
+						 th:object="${airport}" method="POST">
+						 
+			<tr>
+			 <td> Airport Id</td>
+           <td>
+			 <input type="text" th:field="*{airportId}"/>
+			</td>
+			</tr>				
+						 
+           <tr>
+			 <td> Airport Code</td>
+           <td>
+			 <input type="text" th:field="*{airportCode}"/>
+			</td>
+			</tr>
+			
+			
+			<tr>
+			  <td> Airport Name</td>
+			 <td>		
+			  <input type="text" th:field="*{airportName}"/></td>
+			</tr>
+			
+			
+					
+		   <tr>
+		     <td> City</td>		
+		  <td>		
+			 <input type="text" th:field="*{city}"/></td>	
+			</tr>
+			
+			
+			<tr>
+		     <td> Country</td>		
+		  <td>		
+			<input type="text" th:field="*{country}"/></td>	
+			</tr>
+					
+					
+			<tr>
+			<td>	
+			<button type="submit" class="btn btn-info col-2">Save</button></td>
+			</tr>			
+		</form>
+		<tr>
+		<td>
+	<a th:href="@{/list}">Back to Airport List</a>
+		</td>
+		</tr>
+	</div>
+</body>
+
+</html>
+		
+				
